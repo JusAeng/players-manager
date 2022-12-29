@@ -8,7 +8,8 @@ router.get('/',(req,res) => {
 
 //get Player by Id
 router.get('/:id',(req,res) => {
-    res.send("brabra");
+    playerID = req.params.id
+    res.send(`player id = ${playerID} now is showing`);
 });
 
 //add Player
@@ -18,12 +19,14 @@ router.post('/add',(req,res) => {
 
 //delete Player by Id
 router.delete('/delete/:id',(req,res) => {
-    res.send("player deleted !");
+    playerID = req.params.id
+    res.send(`player ${playerID} deleted !`);
 });
 
 //update Player by Id
 router.put('/update/:id', (req,res) => {
-    res.send('player updated !');
+    playerID = req.params.id
+    res.send(`player ${playerID} updated !`);
 });
 
 
