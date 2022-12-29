@@ -4,5 +4,5 @@ const player = require('./player.route');
 
 module.exports = (app) => {
     app.use(express.json());
-    app.use('/api/players',player)
+    app.use('/api/players',player);
 }

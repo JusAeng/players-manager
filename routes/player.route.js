@@ -1,32 +1,30 @@
 const router = require('express').Router();
-
+const playerController = require('../controllers/player.controller');
 
 //get All players
-router.get('/',(req,res) => {
-    res.send('here player');
+router.get('/', async (req,res) => {
+    const x = await playerController.getAll(req,res);
 });
 
 //get Player by Id
-router.get('/:id',(req,res) => {
+router.get('/:id', async (req,res) => {
     playerID = req.params.id
-    res.send(`player id = ${playerID} now is showing`);
+    const x = await playerController.getByID(req,res);
 });
 
 //add Player
-router.post('/add',(req,res) => {
-    res.send("player created !");
+router.post('/add', async (req,res) => {
+    const x = await playerController.crete(req,res);
 });
 
 //delete Player by Id
-router.delete('/delete/:id',(req,res) => {
-    playerID = req.params.id
-    res.send(`player ${playerID} deleted !`);
+router.delete('/delete/:id', async (req,res) => {
+    const x = await playerController.deleteByID(req,res);
 });
 
 //update Player by Id
-router.put('/update/:id', (req,res) => {
-    playerID = req.params.id
-    res.send(`player ${playerID} updated !`);
+router.put('/update/:id', async (req,res) => {
+    const x = await playerController.updateByID(req,res);
 });
 
 
