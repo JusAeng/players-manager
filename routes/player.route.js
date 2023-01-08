@@ -8,7 +8,6 @@ router.get('/', async (req,res) => {
 
 //get Player by Id
 router.get('/:id', async (req,res) => {
-    playerID = req.params.id
     const x = await playerController.getByID(req,res);
 });
 
