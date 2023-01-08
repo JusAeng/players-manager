@@ -10,7 +10,7 @@ const playerSchema = new mongoose.Schema({
         require: true,
     },
     class: {
-        type: Number,
+        type: String,
         require: true,
     },
     dribble:{
@@ -25,7 +25,7 @@ const playerSchema = new mongoose.Schema({
         type:Number,
         required : true,
     },
-    defence:{
+    defend:{
         type:Number,
         required : true,
     },
